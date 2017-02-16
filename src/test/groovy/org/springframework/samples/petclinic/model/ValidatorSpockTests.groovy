@@ -62,25 +62,7 @@ public class ValidatorSpockTests extends Specification {
 	}
 	
 	// 3. TODO: validate a against a valid first name (non-empty, non-null value).
-	def "first name validation"() {
-	  setup:
-	  mockForConstraintsTests(Person);
-	  
-	  
-	  when:
-	  def person = new Person(lastname: "Smith");
-	  person.firstName = firstName; 
-	  person.validate();
-	  
-	  then:
-	  person.hasErrors() == !valid
-
-	  where:
-	  firstName     || valid
-	  " "			|| false
-	  null          || false
-	  "Will"        || true
-	}
+	
 	// 4. TODO: validate against empty last name
 	def "last name cannot be empty"() {
 	  setup:
@@ -118,24 +100,5 @@ public class ValidatorSpockTests extends Specification {
 	}
 	
 	// 6. TODO: validate a against a valid last name (non-empty, non-null value).
-	def "last name validation"() {
-	  setup:
-	  mockForConstraintsTests(Person);
-	  def person = new Person();
-	  def validator = createValidator();
-	  
-	  when:
-	  person.lastName = lastName;
-	  person.firstName("Will");	 
-	  validator.validate(person);
-	  
-	  then:
-	  person.hasErrors() == !valid
-
-	  where:
-	  lastName      || valid
-	  " "			|| false
-	  null          || false
-	  "Smith"       || true
-	}
+	
 }
