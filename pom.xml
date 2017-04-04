@@ -159,10 +159,9 @@
     <configuration>
         <url>http://localhost:8080/manager/html</url>
         <server>tomcat8</server>
-        <path>/spring-petclinic</path>
-        <update>true</update>
         <username>tomcat</username>
         <password>s3cret</password>
+        <update>true</update>
     </configuration>
 </plugin>
     <plugins>
